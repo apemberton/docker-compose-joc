@@ -36,6 +36,7 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
     - Get IP of you VBox for the Docker host you are updating: `VBoxManage showvminfo {machine_name} --machinereadable | grep hostonlyadapter`
     - Run the following command to get the IPAddress for the VBox Network Adapter that matches the name from above: `VBoxManage list hostonlyifs`
     - Add following script to your Docker Machine at `/var/lib/boot2docker/bootlocal.sh`:
+        
         ```
         #/bin/bash
         sudo umount /Users
