@@ -46,8 +46,7 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
         ```
     - Make the `bootlocal.sh` file executable: `sudo chmod +x /var/lib/boot2docker/bootlocal.sh`
     - exit ssh and restart Docker Machine: `docker-machine restart`
-- Route traffic from Mac OS X to Docker Machine VM IP: `sudo route -n add -net 172.17.0.0 <MACHINE_IP>`
-  - MACHINE_IP retrieved via `docker-machine ip {machine_name}`
+- Route traffic from Mac OS X to Docker Machine VM IP: ``sudo route -n add -net 172.17.0.0 `docker-machine ip {machine_name}` ``
 - Configure OS X to use dnsdock DNS by creating the file `/etc/resolver/docker` with content of `nameserver 172.17.42.1`
 - Clone this repo anywhere under your `/Users` directory
 - If you wouldl like to have your Jenkins `HOME` directory somewhere else you need to update the `docker-compose.yml` file:
