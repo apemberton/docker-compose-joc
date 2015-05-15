@@ -44,7 +44,7 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
         sudo /usr/local/etc/init.d/nfs-client start
         sudo mount -t nfs -o noacl,async 192.168.99.1:/Users /Users
         ```
-    - Make the `bootlocal.sh` file executable: `sudo chmod +x bootlocal.sh`
+    - Make the `bootlocal.sh` file executable: `sudo chmod +x /var/lib/boot2docker/bootlocal.sh`
     - exit ssh and restart Docker Machine: `docker-machine restart`
 - Route traffic from Mac OS X to Docker Machine VM IP: `sudo route -n add -net 172.17.0.0 <MACHINE_IP>`
   - MACHINE_IP retrieved via `docker-machine ip {machine_name}`
