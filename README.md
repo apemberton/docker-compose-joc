@@ -49,7 +49,7 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
 - Route traffic from Mac OS X to Docker Machine VM IP: ``sudo route -n add -net 172.17.0.0 `docker-machine ip {machine_name}` ``
 - Configure OS X to use dnsdock DNS by creating the file `/etc/resolver/docker` with content of `nameserver 172.17.42.1`
 - Clone this repo anywhere under your `/Users` directory
-- If you wouldl like to have your Jenkins `HOME` directory somewhere else you need to update the `docker-compose.yml` file:
+- If you would like to store your Jenkins `HOME` directory somewhere else you need to update the `docker-compose.yml` file:
   - Update `data` under dnsdock -> volumes to point to where you want your Jenkins `HOME` directory. 
   NOTE: You could have several different directories configured for different demos and just change this to point to the demo you want to run.
 
