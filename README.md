@@ -36,14 +36,15 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
     - Get IP of you VBox for the Docker host you are updating: `VBoxManage showvminfo {machine_name} --machinereadable | grep hostonlyadapter`
     - Run the following command to get the IPAddress for the VBox Network Adapter that matches the name from above: `VBoxManage list hostonlyifs`
     - Add following script to your Docker Machine at `/var/lib/boot2docker/bootlocal.sh`:
-```bash
+```
 #/bin/bash
 sudo umount /Users
 sudo /usr/local/etc/init.d/nfs-client start
 sudo mount -t nfs -o noacl,async 192.168.99.1:/Users /Users
 ```
-    - Make the `bootlocal.sh` file executable: `sudo chmod +x bootlocal.sh`
-    - exit ssh and restart Docker Machine: `docker-machine restart`
+
+  - Make the `bootlocal.sh` file executable: `sudo chmod +x bootlocal.sh`
+  - exit ssh and restart Docker Machine: `docker-machine restart`
 - Route traffic from Mac OS X to Docker Machine VM IP: `sudo route -n add -net 172.17.0.0 <MACHINE_IP>`
   - MACHINE_IP retrieved via `docker-machine ip {machine_name}`
 - Configure OS X to use dnsdock DNS by creating the file `/etc/resolver/docker` with content of `nameserver 172.17.42.1`
