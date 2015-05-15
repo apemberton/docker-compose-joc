@@ -25,7 +25,7 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
   - `docker-machine create --driver=virtualbox --virtualbox-memory=4096 {machine_name}`
   - set env for newly created machine: `eval "$(docker-machine env)"`
   - ssh into machine: `docker-machine ssh {machine_name}`
-  - `vi /var/lib/boot2docker/profile`
+  - `sudo vi /var/lib/boot2docker/profile`
   - append to `EXTRA_ARGS` and save: `-bip=172.17.42.1/24 -dns 172.17.42.1 -dns 8.8.8.8 `
   - update the VirtualBox network adapter (vboxnet<x> - number may vary) *Promiscuous Mode* to *Allow All* 
 - replace vboxfs /Users share with nfs
